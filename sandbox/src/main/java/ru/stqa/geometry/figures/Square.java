@@ -10,6 +10,6 @@ public class Square {
     }
 
     public static double perimeter(double a) {
-        return 4 * a;
+        return 4 * a ;
     }
 }
