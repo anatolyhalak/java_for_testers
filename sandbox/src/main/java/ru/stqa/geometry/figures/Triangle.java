@@ -1,9 +1,9 @@
 package ru.stqa.geometry.figures;
 
 public class Triangle {
-    private double a;
-    private double b;
-    private double c;
+    double a;
+    double b;
+    double c;
 
     /*
     Создаем треугольник по трем сторонам
@@ -25,13 +25,20 @@ public class Triangle {
     }
 
     public static void printTrianglePerimetr(Triangle t) {
-        String textPerimeter = String.format("Периметр треугольника со сторонами: + %f + %f + %f = %f", t.a, t.b, t.c, t.trianglePerimeter());
+        String textPerimeter = String.format("Периметр треугольника со сторонами: %.1f, %.1f и %.1f = %.1f", t.a, t.b, t.c, t.trianglePerimeter());
         System.out.println(textPerimeter);
     }
+    public static void printTriangleArea(Triangle t){
+        String textArea = String.format("Площадь треугольника со сторонами: %.1f, %.1f и %.1f = %.2f", t.a, t.b, t.c, t.triangleArea());
+        System.out.println(textArea);
+    }
 
-    private Object trianglePerimeter() {
-
-        return null;
+    public double trianglePerimeter() {
+        return this.a + this.b + this.c;
+    }
+    public double triangleArea(){
+        double p = trianglePerimeter()/2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
 }
